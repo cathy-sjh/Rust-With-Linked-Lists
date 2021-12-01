@@ -1,0 +1,11 @@
+[workspace]
+
+members = [
+    "src/a_bad_stack",
+    "src/an_ok_stack",
+    "src/a_persistent_stack",
+    "src/a_bad_safe_deque",
+    "src/an_unsafe_queue",
+    "src/silly1",
+    "src/an_ok_unsafe_deque"
+]

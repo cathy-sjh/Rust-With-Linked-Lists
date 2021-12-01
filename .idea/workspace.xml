@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+    </configurations>
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e74d550-1599-4036-9be2-f9632f4fa3ea" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="wgcpnr52" />
+  </component>
+  <component name="ProjectId" id="1wkFFO2iUPf6ID4MlrSTSHN0Z9m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="D:/rust_test/leecode_test" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionD:/rust_project/learn_rust_by_list/src/a_bad_safe_deque/src/lib.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionD:/rust_project/learn_rust_by_list/src/a_persistent_stack/src/lib.rs" value="true" />
+    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e74d550-1599-4036-9be2-f9632f4fa3ea" name="Default Changelist" comment="" />
+      <created>1628994574721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628994574721</updated>
+      <workItem from="1628994576996" duration="37465000" />
+      <workItem from="1629551656538" duration="9798000" />
+      <workItem from="1630028330529" duration="103000" />
+      <workItem from="1631174567916" duration="772000" />
+      <workItem from="1633783610398" duration="2969000" />
+      <workItem from="1633850661989" duration="11000" />
+      <workItem from="1633850720170" duration="2000" />
+      <workItem from="1637744001504" duration="30000" />
+      <workItem from="1637744577547" duration="19269000" />
+      <workItem from="1637894725599" duration="16974000" />
+      <workItem from="1637919736899" duration="23254000" />
+      <workItem from="1638152058782" duration="731000" />
+      <workItem from="1638153746356" duration="4794000" />
+      <workItem from="1638168473135" duration="287000" />
+      <workItem from="1638168769564" duration="21194000" />
+      <workItem from="1638195277413" duration="104000" />
+      <workItem from="1638237978365" duration="18258000" />
+      <workItem from="1638274085620" duration="641000" />
+      <workItem from="1638324101480" duration="917000" />
+      <workItem from="1638325105052" duration="436000" />
+      <workItem from="1638328905440" duration="3927000" />
+      <workItem from="1638339071485" duration="21243000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
