@@ -305,8 +305,27 @@ mod tests {
     }
 
     #[test]
+    fn peek() {
+        let mut list = List::new();
+        assert_eq!(list.peek_back(), None);
+        assert_eq!(list.peek_front(), None);
+        list.push_back(1);
+        list.push_back(2);
+        list.push_back(3);
+        assert_eq!(list.peek_back(), Some(&3));
+        assert_eq!(list.peek_front(), Some(&1));
+        list.pop_front();
+        list.pop_front();
+        list.pop_front();
+        assert_eq!(list.peek_back(), None);
+        assert_eq!(list.peek_front(), None);
+    }
+
+    #[test]
     fn peek_mut() {
         let mut list = List::new();
+        assert_eq!(list.peek_back_mut(), None);
+        assert_eq!(list.peek_front_mut(), None);
         list.push_back(1);
         list.push_back(2);
         list.push_back(3);
