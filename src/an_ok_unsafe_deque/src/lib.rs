@@ -427,5 +427,6 @@ mod tests {
         assert_eq!(list.pop_back(), Some(String::from("banana yello yes")));
         assert_eq!(list.pop_back(), Some(String::from("apple red yes")));
         assert_eq!(list.pop_back(), None);
+
     }
 }
