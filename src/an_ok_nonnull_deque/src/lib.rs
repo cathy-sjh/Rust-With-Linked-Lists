@@ -32,6 +32,9 @@ impl<T> List<T> {
         unsafe {
             node.next = self.head;
             node.prev = None;
+            //Box::leak 这是node节点没有被析构的关键
+            // let ptr = Box::into_raw(node);
+            // let node = NonNull::new(ptr);
             let node = NonNull::new(Box::leak(node));
 
             match self.head {
@@ -49,7 +52,7 @@ impl<T> List<T> {
     #[inline]
     fn pop_front_node(&mut self) -> Option<Box<Node<T>>> {
         self.head.map(|node| unsafe {
-            let node = Box::from_raw(node.as_ptr());
+            let node = Box::from_raw(node.as_ptr()); //释放节点内存，不然会内存泄漏
             self.head = node.next;
             match self.head {
                 None => {
