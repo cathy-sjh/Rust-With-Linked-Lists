@@ -10,7 +10,7 @@ pub struct BinaryTree<T> {
 type Link<T> = Option<Box<Node<T>>>;
 
 #[derive(Eq, PartialEq, Clone)]
-pub struct Node<T> {
+struct Node<T> {
     elem: T,
     left: Link<T>,
     right: Link<T>,
