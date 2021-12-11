@@ -8,5 +8,6 @@ members = [
     "src/an_unsafe_queue",
     "src/silly1",
     "src/an_ok_unsafe_deque",
-    "src/an_ok_nonnull_deque"
+    "src/an_ok_nonnull_deque",
+    "src/an_ok_binary_tree"
 ]

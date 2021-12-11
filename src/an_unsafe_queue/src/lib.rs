@@ -59,6 +59,10 @@ impl<T> List<T> {
         })
     }
 
+    pub fn is_empty(&self) -> bool {
+        self.head.is_none()
+    }
+
     pub fn into_iter(self) -> IntoIter<T> {
         IntoIter(self)
     }
@@ -133,6 +137,7 @@ mod test {
     #[test]
     fn basics() {
         let mut list = List::new();
+        assert!(list.is_empty());
 
         // Check empty list behaves right
         assert_eq!(list.pop(), None);
@@ -141,6 +146,8 @@ mod test {
         list.push(1);
         list.push(2);
         list.push(3);
+
+        assert!(!list.is_empty());
 
         // Check normal removal
         assert_eq!(list.pop(), Some(1));
@@ -166,6 +173,8 @@ mod test {
         assert_eq!(list.pop(), Some(6));
         assert_eq!(list.pop(), Some(7));
         assert_eq!(list.pop(), None);
+
+        assert!(list.is_empty());
     }
 
     #[test]

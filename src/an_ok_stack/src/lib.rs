@@ -60,6 +60,10 @@ impl<T> List<T> {
         //     &mut node.elem
         // })
     }
+
+    pub fn is_empty(&self) -> bool{
+        self.head.is_none()
+    }
 }
 
 impl<T> Drop for List<T> {
@@ -146,6 +150,7 @@ mod tests {
     #[test]
     fn basics() {
         let mut list = List::new();
+        assert!(list.is_empty());
 
         // Check empty list behaves right
         assert_eq!(list.pop(), None);
@@ -154,6 +159,8 @@ mod tests {
         list.push(1);
         list.push(2);
         list.push(3);
+
+        assert!(!list.is_empty());
 
         // Check normal removal
         assert_eq!(list.pop(), Some(3));
