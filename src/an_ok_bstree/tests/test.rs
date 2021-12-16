@@ -82,8 +82,19 @@ mod tests {
         assert_eq!(tree.search(&8), false);
         assert_eq!(tree.prev_orer(), vec![7, 5, 3, 2, 4, 6, 15, 12, 10, 14, 17]);
         assert_eq!(tree.in_order(), vec![2, 3, 4, 5, 6, 7, 10, 12, 14, 15, 17]);
-        assert_eq!(tree.post_order(), vec![2, 4, 3, 6, 5, 10, 14, 12, 17, 15, 7]);
-        assert_eq!(tree.level_order(), vec![7, 5, 15, 3, 6, 12, 17, 2, 4, 10, 14]);
+        assert_eq!(
+            tree.post_order(),
+            vec![2, 4, 3, 6, 5, 10, 14, 12, 17, 15, 7]
+        );
+        assert_eq!(
+            tree.level_order(),
+            vec![7, 5, 15, 3, 6, 12, 17, 2, 4, 10, 14]
+        );
+
+        let mut tree = BSTree::new();
+        tree.insert(2);
+        tree.delete(2);
+        assert!(tree.is_empty())
     }
 
     #[test]
@@ -150,5 +161,32 @@ mod tests {
 
         let res: Vec<i32> = tree.iter().collect();
         assert_eq!(res, vec![2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 15, 17]);
+    }
+
+    #[test]
+    fn successor_predecessor() {
+        let mut tree = BSTree::new();
+        tree.insert(8);
+        tree.insert(5);
+        tree.insert(3);
+        tree.insert(2);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(7);
+        tree.insert(15);
+        tree.insert(12);
+        tree.insert(17);
+        tree.insert(10);
+        tree.insert(14);
+        assert_eq!(tree.successor(&8), Some(&10));
+        assert_eq!(tree.successor(&4), Some(&5));
+        assert_eq!(tree.successor(&3), Some(&4));
+        assert_eq!(tree.successor(&6), Some(&7));
+        assert_eq!(tree.successor(&17), None);
+        assert_eq!(tree.predecessor(&3), Some(&2));
+        assert_eq!(tree.predecessor(&6), Some(&5));
+        assert_eq!(tree.predecessor(&10), Some(&8));
+        assert_eq!(tree.predecessor(&14), Some(&12));
+        assert_eq!(tree.predecessor(&2), None);
     }
 }
