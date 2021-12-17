@@ -1,10 +1,6 @@
 use crate::iterator::{RangePairIter, TraverseIter};
-use crate::node::{
-    delete, in_order, insert, is_avl_tree, level_order, max_pair, min_pair, post_order,
-    predecessor, prev_order, search, search_pair, successor, Link, Node,
-};
-use crate::Queue;
-use std::collections::Bound;
+use crate::node::{Node, Link};
+use std::collections::{Bound, VecDeque};
 
 pub struct AVLTree<K, V> {
     root: Link<K, V>,
@@ -34,7 +30,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     pub fn insert(&mut self, key: K, value: V) {
         match self.root.take() {
             None => self.root = Some(Box::new(Node::new(key, value))),
-            Some(node) => self.root = Some(insert(key, value, node)),
+            Some(node) => self.root = Some(node.insert(key, value)),
         }
     }
 
@@ -51,7 +47,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// ```
     pub fn delete(&mut self, key: K) {
         if let Some(node) = self.root.take() {
-            self.root = delete(key, node)
+            self.root = node.delete(key)
         }
     }
 
@@ -75,7 +71,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.get_pair(&1), Some((&1, &'a')));
     /// ```
     pub fn get_pair(&self, key: &K) -> Option<(&K, &V)> {
-        self.root.as_ref().and_then(|node| search_pair(key, node))
+        self.root.as_ref().and_then(|node| node.search_pair(key))
     }
 
     /// 根据键查找对应的值，找不到返回None，返回值的不可变借用
@@ -87,7 +83,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.get(&1), Some(&'a'));
     /// ```
     pub fn get(&self, key: &K) -> Option<&V> {
-        self.root.as_ref().and_then(|node| search(key, node))
+        self.root.as_ref().and_then(|node| node.search(key))
     }
 
     /// 据键查找对应的值，找不到返回默认值
@@ -127,7 +123,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.min_pair(), Some((&1, &'a')));
     /// ```
     pub fn min_pair(&self) -> Option<(&K, &V)> {
-        self.root.as_ref().map(|node| min_pair(node))
+        self.root.as_ref().map(|node| node.min_pair())
     }
 
     /// 返回AVL树中的最大键值对
@@ -141,7 +137,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.max_pair(), Some((&3, &'c')));
     /// ```
     pub fn max_pair(&self) -> Option<(&K, &V)> {
-        self.root.as_ref().map(|node| max_pair(node))
+        self.root.as_ref().map(|node| node.max_pair())
     }
 
     /// 判断是否为AVL树，空树不算AVL树
@@ -157,7 +153,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
         if self.root.is_none() {
             return false;
         }
-        is_avl_tree(&self.root)
+        Node::is_avl_tree(&self.root)
     }
 
     ///返回第一个大于key的键值对
@@ -173,7 +169,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.successor(&3), None);
     /// ```
     pub fn successor(&self, key: &K) -> Option<(&K, &V)> {
-        self.root.as_ref().and_then(|node| successor(key, node))
+        self.root.as_ref().and_then(|node| node.successor(key))
     }
 
     ///返回第一个小于key的键值对
@@ -189,7 +185,7 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// assert_eq!(tree.predecessor(&1), None);
     /// ```
     pub fn predecessor(&self, key: &K) -> Option<(&K, &V)> {
-        self.root.as_ref().and_then(|node| predecessor(key, node))
+        self.root.as_ref().and_then(|node| node.predecessor(key))
     }
 
     /// 范围迭代器
@@ -225,10 +221,10 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// ```
     pub fn preorder_iter(&self) -> TraverseIter<K, V> {
         let pre_order = self.prev_order();
-        let mut queue = Queue::new();
+        let mut queue = VecDeque::new();
         for key in pre_order {
             if let Some(p) = self.get_pair(&key) {
-                queue.push(p);
+                queue.push_back(p);
             }
         }
         TraverseIter::new(queue)
@@ -247,10 +243,10 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// ```
     pub fn inorder_iter(&self) -> TraverseIter<K, V> {
         let in_order = self.in_order();
-        let mut queue = Queue::new();
+        let mut queue = VecDeque::new();
         for key in in_order {
             if let Some(p) = self.get_pair(&key) {
-                queue.push(p);
+                queue.push_back(p);
             }
         }
         TraverseIter::new(queue)
@@ -269,10 +265,10 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// ```
     pub fn postorder_iter(&self) -> TraverseIter<K, V> {
         let post_order = self.post_order();
-        let mut queue = Queue::new();
+        let mut queue = VecDeque::new();
         for key in post_order {
             if let Some(p) = self.get_pair(&key) {
-                queue.push(p);
+                queue.push_back(p);
             }
         }
         TraverseIter::new(queue)
@@ -291,10 +287,10 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     /// ```
     pub fn levelorder_iter(&self) -> TraverseIter<K, V> {
         let level_order = self.level_order();
-        let mut queue = Queue::new();
+        let mut queue = VecDeque::new();
         for key in level_order {
             if let Some(p) = self.get_pair(&key) {
-                queue.push(p);
+                queue.push_back(p);
             }
         }
         TraverseIter::new(queue)
@@ -303,28 +299,28 @@ impl<K: PartialOrd + Clone, V> AVLTree<K, V> {
     ///前序遍历
     fn prev_order(&self) -> Vec<K> {
         let mut buf = Vec::new();
-        prev_order(&self.root, &mut buf);
+        Node::prev_order(&self.root, &mut buf);
         buf
     }
 
     ///中序遍历
     fn in_order(&self) -> Vec<K> {
         let mut buf = Vec::new();
-        in_order(&self.root, &mut buf);
+        Node::in_order(&self.root, &mut buf);
         buf
     }
 
     ///后序遍历
     fn post_order(&self) -> Vec<K> {
         let mut buf = Vec::new();
-        post_order(&self.root, &mut buf);
+        Node::post_order(&self.root, &mut buf);
         buf
     }
 
     ///层序遍历
     fn level_order(&self) -> Vec<K> {
         let mut buf = Vec::new();
-        level_order(&self.root, &mut buf);
+        Node::level_order(&self.root, &mut buf);
         buf
     }
 }
