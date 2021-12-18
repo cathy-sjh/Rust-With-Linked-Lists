@@ -151,15 +151,15 @@ impl<K: PartialOrd + Clone, V> Node<K, V> {
 
     //将两棵子树合并为一棵，合并后仍然满足AVL树的规则，返回新生成树的根节点
     fn combine_two_subtrees(
-        left: Box<Node<K, V>>,
-        right: Box<Node<K, V>>,
+        left: Node<K, V>,
+        right: Node<K, V>,
     ) -> Box<Node<K, V>> {
         // 得到右子树中最小的节点和去除最小节点后剩余的树
         let (remain_tree, min) = right.remove_min();
         // 最小节点作为两个子树的新根节点
         let mut new_root = min;
         new_root.right = remain_tree;
-        new_root.left = Some(left);
+        new_root.left = Some(Box::new(left));
         new_root.update_node()
     }
 
@@ -173,7 +173,7 @@ impl<K: PartialOrd + Clone, V> Node<K, V> {
             (None, None) => None,
             (Some(left), None) => Some(left),
             (None, Some(right)) => Some(right),
-            (Some(left), Some(right)) => Some(Self::combine_two_subtrees(left, right)),
+            (Some(left), Some(right)) => Some(Self::combine_two_subtrees(*left, *right)),
         }
     }
 
