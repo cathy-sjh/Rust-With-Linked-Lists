@@ -12,6 +12,7 @@ pub struct Node<K, V> {
 }
 
 impl<K: PartialOrd + Clone, V> Node<K, V> {
+
     pub fn new(key: K, value: V) -> Self {
         Node {
             key,
