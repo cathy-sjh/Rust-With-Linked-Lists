@@ -9,6 +9,21 @@
       <sourceFolder url="file://$MODULE_DIR$/src/an_unsafe_queue/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/silly1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/an_ok_unsafe_deque/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_nonnull_deque/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_nonnull_deque/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_binary_tree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_bstree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_avl_tree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_bstree/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_avl_tree/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_avl_tree/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_bstree/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_unsafe_rb_tree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_unsafe_rb_tree/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_unsafe_rb_tree/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_btree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_btree/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/an_ok_btree/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

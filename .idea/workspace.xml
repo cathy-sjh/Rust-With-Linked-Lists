@@ -5,14 +5,26 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
     </configurations>
+  </component>
+  <component name="CargoProjectFeatures">
+    <cargoProject file="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$/src/an_ok_bstree">
+        <feature name="no_recur" />
+      </package>
+    </cargoProject>
   </component>
   <component name="CargoProjects">
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e74d550-1599-4036-9be2-f9632f4fa3ea" name="Default Changelist" comment="" />
+    <list default="true" id="5e74d550-1599-4036-9be2-f9632f4fa3ea" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/learn_rust_by_list.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/learn_rust_by_list.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +32,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,6 +54,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="wgcpnr52" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1wkFFO2iUPf6ID4MlrSTSHN0Z9m" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,21 +66,27 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="D:/rust_test/leecode_test" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="org.rust.cargo.project.model.PROJECT_DISCOVERY" value="true" />
     <property name="org.rust.disableDetachedFileInspectionD:/rust_project/learn_rust_by_list/src/a_bad_safe_deque/src/lib.rs" value="true" />
     <property name="org.rust.disableDetachedFileInspectionD:/rust_project/learn_rust_by_list/src/a_persistent_stack/src/lib.rs" value="true" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_ok_avl_tree/tests/test.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_ok_bstree/tests/test.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_ok_btree/examples/bench.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_ok_btree/tests/test.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_unsafe_rb_tree/examples/bench.rs" value="true" />
+    <property name="org.rust.disableDetachedFileInspectionZ:/s192040153/rust_learn/Rust-With-Linked-Lists/src/an_unsafe_rb_tree/tests/test.rs" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\s192040153\rust_learn\Rust-With-Linked-Lists\src\an_ok_bstree\src\node" />
+    </key>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
@@ -94,22 +122,77 @@
       <workItem from="1638325105052" duration="436000" />
       <workItem from="1638328905440" duration="3927000" />
       <workItem from="1638339071485" duration="21243000" />
+      <workItem from="1638414022036" duration="195000" />
+      <workItem from="1638414241545" duration="416000" />
+      <workItem from="1638415230826" duration="900000" />
+      <workItem from="1638428201620" duration="279000" />
+      <workItem from="1638429323253" duration="12936000" />
+      <workItem from="1638498698791" duration="24840000" />
+      <workItem from="1638774258481" duration="3243000" />
+      <workItem from="1638797330899" duration="73000" />
+      <workItem from="1639105173736" duration="26866000" />
+      <workItem from="1639190926417" duration="25057000" />
+      <workItem from="1639367138696" duration="11033000" />
+      <workItem from="1639384969582" duration="28103000" />
+      <workItem from="1639483461901" duration="1431000" />
+      <workItem from="1639486366353" duration="4769000" />
+      <workItem from="1639535521735" duration="76000" />
+      <workItem from="1639536477636" duration="23073000" />
+      <workItem from="1639624290781" duration="13134000" />
+      <workItem from="1639651556982" duration="10003000" />
+      <workItem from="1639716112485" duration="1677000" />
+      <workItem from="1639720826111" duration="20661000" />
+      <workItem from="1639793378564" duration="23736000" />
+      <workItem from="1639971123394" duration="2322000" />
+      <workItem from="1639978338053" duration="242000" />
+      <workItem from="1639978595692" duration="51000" />
+      <workItem from="1639978803327" duration="46159000" />
+      <workItem from="1640135768543" duration="5499000" />
+      <workItem from="1640143275324" duration="21756000" />
+      <workItem from="1640173454818" duration="8411000" />
+      <workItem from="1640226852399" duration="12475000" />
+      <workItem from="1640246309346" duration="358000" />
+      <workItem from="1640246863292" duration="2405000" />
+      <workItem from="1640261619328" duration="269000" />
+      <workItem from="1640778548223" duration="521000" />
+      <workItem from="1640779084420" duration="121000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="sjh" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

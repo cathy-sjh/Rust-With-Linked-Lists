@@ -12,5 +12,6 @@ members = [
     "src/an_ok_binary_tree",
     "src/an_ok_bstree",
     "src/an_ok_avl_tree",
-    "src/an_unsafe_rb_tree"
+    "src/an_unsafe_rb_tree",
+    "src/an_ok_btree",
 ]
